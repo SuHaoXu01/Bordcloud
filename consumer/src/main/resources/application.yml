@@ -1,0 +1,28 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: consumer
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    mode: LEGACYHTML5
+  mvc:
+    static-path-pattern: /static/**
+    date-format: yyyy-MM-dd
+  resources:
+    static-locations: classpath:/static/
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:123456@localhost:8002/eureka/
+feign:
+  hystrix:
+    enabled: true
+
+#…Ë÷√∏∫‘ÿæ˘∫‚
+feign.hystrix.enabled: false
